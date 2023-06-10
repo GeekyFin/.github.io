@@ -1,3 +1,9 @@
+My personal website / portfolio for the work to come.
+I have used free template from html5up.
+
+Mikko Sortti
+
+--
 Strata by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
