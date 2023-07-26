@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
 	</head>
 	<body class="is-preload">
 
@@ -28,18 +29,22 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Hey you! Welcome to see my journey<br />
-							to become better with code.</h2>
+							<h2 style="margin-bottom:0.1em">Mikko Sortti</h2>
+							<h5 style="margin-top:0;margin-bottom:1.5em;">Head of ICT services, Wellfare county of North Ostrobothnia</h5>
 						</header>
-						<p>I'm 37 year old IT professional with 15+ years of experience in IT service operation, management and project management.</p>
-						<p>I have always been interested in web development, which I did as a freelancer during 2011 - 2016 with basic technologies (html, css, php and SQL).</p>
-						<p>Lately I have been more and more keen to data analysis and data-driven decision making. Due to that heavy interest, this portfolio site is the sideproduct from that.</p>
+						<p>Versatile IT professional based in Oulu, Finland, with 15+ years of experience in IT service operation, management and project management.
+						A husband and father of two beautiful children. </p>
+						<p>Interested on everything in the field of technology and how it can create value and drive growth with tangible results.</p>
+						<p>Currently learning tools and trades of data-analysis, including Excel, SQL, Tableau and R-Programming. Soon Python.</p>
+						
 						<ul class="actions">
-							<li><a href="#" class="button" id="naytadivi">Learn More</a></li>
+							<li class="button" id="naytadivi">Learn More</li>
 						</ul>
 						<div id="lisaa">
 							<p>For now, nothing more to learn here..</p>
-						
+							<!-- build short resume and skillset with help of 
+							 https://webdesign.tutsplus.com/tutorials/build-a-static-portfolio-with-advanced-css-bar-chart--cms-33050  -->
+							 
 						</div>
 					</section>
 
@@ -452,25 +457,50 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-			<script type="text/javascript">
-				$(document).ready(function(){
-						$("#naytadivi").click(function(){
-							if ($("#lisaa:first").is(":hidden")) {
-								$("#lisaa").slideDown("slow");
-							} else {
-								$("#lisaa").slideUp("slow");
-								//$("div#lisaa").hide();
-							}
-						  });
-				});
-			</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+					$("#naytadivi").click(function(){
+						if ($("#lisaa:first").is(":hidden")) {
+							$("#lisaa").slideDown("slow");
+						} else {
+							$("#lisaa").slideUp("slow");
+							//$("div#lisaa").hide();
+						}
+					  });
+			});
+
+			const chartWrapper = document.querySelector(".chart-wrapper");
+			const scrollDown = document.querySelector(".scroll-down");
+
+			function isElementInViewport(el) {
+			var rect = el.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <=
+				(window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+			}
+
+			window.addEventListener("scroll", scrollHandler);
+
+			function scrollHandler() {
+			window.pageYOffset > 0
+				? scrollDown.classList.add("is-hidden")
+				: scrollDown.classList.remove("is-hidden");
+			if (isElementInViewport(chartWrapper)) chartWrapper.classList.add("in-view");
+			}
+
+		</script>
+
 
 	</body>
 </html>
